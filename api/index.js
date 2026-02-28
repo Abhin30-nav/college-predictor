@@ -7,7 +7,7 @@ app.use(cors()); // Allows your HTML file to communicate with this server
 app.use(express.json());
 
 // Connect to MongoDB Atlas
-const mongoURI = 'mongodb+srv://abhinavantham_db_user:@cluster0.suelbpi.mongodb.net/college_predictor?appName=Cluster0';
+const mongoURI = process.env.MONGODB_URI;
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
